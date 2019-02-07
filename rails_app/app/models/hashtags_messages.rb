@@ -1,0 +1,2 @@
+class HashtagsMessages < ApplicationRecord
+end

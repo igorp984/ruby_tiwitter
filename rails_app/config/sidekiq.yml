@@ -1,0 +1,4 @@
+:schedule:  
+  teste:
+    every: '2m'
+    class: HelloWorldWoker
