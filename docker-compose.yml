@@ -25,3 +25,5 @@ services:
             - ./rails_app:/rails_app
         depends_on:
             - db
+        stdin_open: true
+        tty: true
