@@ -1,3 +1,5 @@
+require_relative '../services/destroy_message_service'
+
 class HashtagsController < ApplicationController
   before_action :set_hashtag, only: [:show, :edit, :update, :destroy]
 
@@ -54,7 +56,7 @@ class HashtagsController < ApplicationController
   # DELETE /hashtags/1
   # DELETE /hashtags/1.json
   def destroy
-    @hashtag.destroy
+    DestroyHashtagService.new(@hashtag).charge
     respond_to do |format|
       format.html { redirect_to hashtags_url, notice: 'Hashtag was successfully destroyed.' }
       format.json { head :no_content }
