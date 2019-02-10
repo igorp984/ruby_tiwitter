@@ -3,9 +3,17 @@ class MessagesController < ApplicationController
 
   # GET /messages
   # GET /messages.json
-  def index
-    @tweets = SearchTweetsJob.perform_now
-    @messages = Message.all
+  def index()
+    #@tweets = SearchTweetsJob.perform_now
+    if (params[:hashtag])
+      hashtag = Hashtag.find(params[:hashtag])
+      @messages = hashtag.messages.all
+      respond_to do |format|
+        format.js
+      end
+    else
+      @messages = Message.all
+    end
   end
 
   # GET /messages/1

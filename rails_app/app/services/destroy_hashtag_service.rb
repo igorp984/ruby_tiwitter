@@ -1,6 +1,6 @@
 
 require 'verify_hashtags_messages_service'
-require 'json'
+
 class DestroyHashtagService
     def initialize (hashtag)
         @hashtag = hashtag
@@ -13,11 +13,10 @@ class DestroyHashtagService
     private
 
     def destroy_hashtag
+        #pega todas as mensagem que se relaciona com a hashtag que esta sendo deletada
         messages = @hashtag.messages.all
-        puts '-------------'
+        #chama service para verificar os relacionamentos das mensagems da linha anterior 
         VerifyHashtagsMessagesService.new(messages).charge
         @hashtag.destroy
-        puts '--------'
-         
     end
 end
