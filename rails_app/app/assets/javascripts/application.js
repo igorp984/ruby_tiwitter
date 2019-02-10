@@ -14,3 +14,12 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
+
+function hashtagParams(){
+    if($("#hashtag_id").val() != ""){
+        $("#btn-search").attr('data-params', 'hashtag=' + $("#hashtag_id").val());
+    }else{
+        $("#btn-search").attr('data-params', '');
+    }
+}

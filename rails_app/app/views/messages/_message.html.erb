@@ -1,0 +1,21 @@
+<div id="mensagem">
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Author</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= message.content %></td>
+        <td><%= message.author %></td>
+        <td><%= message.data %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
