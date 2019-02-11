@@ -2,25 +2,7 @@
 
 <h1>Hashtags</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Hashtag</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
- 
- <tbody>
-    <% @hashtags.each do |hashtag| %>
-      <tr>
-        <td><%= hashtag.hashtag %></td>
-        <td><%= link_to 'Show', hashtag %></td>
-        <td><%= link_to 'Edit', edit_hashtag_path(hashtag) %></td>
-        <td><%= link_to 'Destroy', hashtag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'hashtag' %>
 
 <br>
 

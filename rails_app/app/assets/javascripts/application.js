@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery
+//= require select2
 
 function hashtagParams(){
     if($("#hashtag_id").val() != ""){
@@ -23,3 +24,7 @@ function hashtagParams(){
         $("#btn-search").attr('data-params', '');
     }
 }
+
+$( "#hashtag_id" ).select2({
+    theme: "bootstrap"
+});
