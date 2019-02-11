@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :hashtags_options, only: [:index]
 
   # GET /messages
   # GET /messages.json
@@ -74,6 +75,11 @@ class MessagesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_message
       @message = Message.find(params[:id])
+    end
+
+    #hashtags options
+    def hashtags_options
+      @hashtags_options = Hashtag.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Messages</h1>
+<h1>Mensagens</h1>
 
-
-<label for="hashtag">Filtrar por hashtag:</label>
-<%= collection_select(:hashtag, :id, Hashtag.all, :id, :hashtag, {include_blank: "Todas as Tags"},{:onchange=>"hashtagParams()"}) %>
-<button id="btn-search" data-remote="true" data-url="messages/" data-params="" data-method="get">Search</button>
-
-<%= render 'message' %>
+<div class="input-group" style="width: 50%;">
+    <%= collection_select(:hashtag, :id, @hashtags_options, :id, :hashtag, {include_blank: "Todas as Tags"},{:class=>"custom-select", :onchange=>"hashtagParams()"}) %>
+  </select>
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" id="btn-search" data-remote="true" data-url="messages/" data-params="" data-method="get">Search</button>
+  </div>
+</div>
 
 <br>
-
-<%= link_to "Filtrar", new_message_path, remote: true %>
+<%= render 'message' %>
