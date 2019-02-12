@@ -27,3 +27,7 @@ services:
             - db
         stdin_open: true
         tty: true
+    redis:
+        image: redis:alpine
+        ports:
+            - "6380:6380"

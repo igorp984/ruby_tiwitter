@@ -30,6 +30,7 @@ class HashtagsController < ApplicationController
 
     respond_to do |format|
       if @hashtag.save
+        SearchTweetsJob.perform_now
         format.html { redirect_to @hashtag, notice: 'Hashtag was successfully created.' }
         format.json { render :show, status: :created, location: @hashtag }
       else
