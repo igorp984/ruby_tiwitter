@@ -8,7 +8,7 @@ Para rodar está aṕlicação instale as seguintes ferramentas:
 <strong>Docker-compose</strong> <br>
 <strong>Git</strong> <br>
 
-Crie um arquivo .env e crie uma variavel de ambiente PASSWORD e coloque nela a senha
+Clone o projote para sua máquina, crie um arquivo .env e crie uma variavel de ambiente PASSWORD e coloque nela a senha
 que deseja para acesso ao banco de dados. va no arquivo rails_app/config/database.yml e
 altere password para a senha de acesso ao banco que você criou.
 Após instalado essas ferramentas, de um git clone neste projeto e rode os seguintes comandos no terminal:
