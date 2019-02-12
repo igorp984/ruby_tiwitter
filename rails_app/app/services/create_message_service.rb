@@ -27,13 +27,14 @@ class CreateMessageService
                 author:tweet.user.name, 
                 data:tweet.created_at,
                 id_tweet:tweet.id.to_s
-              )
+            )
+                mensagem_criada = 'mensagem_criada'
             end
             #chama o service que cria relação da hastag com a mensagem.
             #p.s: so cria a relação se ela não existir
                        
             CreateHashtagsMessagesService.new(message, @hashtag).charge
-        
+            mensagem_criada
         end
     end
 end

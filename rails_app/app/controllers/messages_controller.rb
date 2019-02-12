@@ -4,8 +4,9 @@ class MessagesController < ApplicationController
 
   # GET /messages
   # GET /messages.json
-  def index()
+  def index
     #@tweets = SearchTweetsJob.perform_now
+    puts params[:hashtag]
     if (params[:hashtag])
       hashtag = Hashtag.find(params[:hashtag])
       @messages = hashtag.messages.all

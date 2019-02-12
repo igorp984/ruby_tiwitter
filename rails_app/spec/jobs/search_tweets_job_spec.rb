@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe SearchTweetsJob, type: :job do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it '#rodando job' do
+   result =  SearchTweetsJob.perform_now
+    
+  end
 end
