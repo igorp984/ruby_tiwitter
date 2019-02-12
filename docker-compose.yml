@@ -14,9 +14,7 @@ services:
         image: postgres
         restart: always
         environment:
-            POSTGRES_PASSWORD: ${PASSWORD}
-        volumes:
-            - ./postgres:/var/lib/postgresql/data
+            POSTGRES_PASSWORD: Rub1twitT3r
         ports:
             - 5432
     app:
